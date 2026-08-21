@@ -1,19 +1,19 @@
-.nav {
-    background-color: #b607da;
-    overflow: hidden;
+nav {
+    display: flex;
+    flex-wrap: wrap;
+
 }
 head {
     background-color: #092f90;
     overflow: hidden;
     
 }
-.nav a {
-    float: center;
-    display: flex;
-    color: #009da8c5;
+nav a {
+    color: #054d52c5;
     text-align: center;
-    padding: 14px 14px;
+    padding: 3px 25px;
     text-decoration: gold underline;
+    border: 3px solid #034741cd;
 
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .dragon {
-    color: #1380787b;
+    color: #200230c4;
 }
 #gryffon {
     color: #d0ea0aa7;
