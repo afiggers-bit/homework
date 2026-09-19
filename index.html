@@ -1,51 +1,122 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Tacos</title>
+    <title>The Land Of Tacos</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
     <main>
         <nav>
             <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="about_me.html">Contact</a>
         </nav>
+
         <header>
             <h1>Tacos</h1>
-            <h1>Welcome To The Land Of Tacos</h1>
+            <p class="subtitle">Welcome To The Land Of Tacos</p>
         </header>
-        <img src="Healthy-Tacos-6.jpg" alt="Taco">
+
+        <img src="Healthy-Tacos-6.jpg" alt="A plate of fresh healthy tacos" class="hero-img">
+
+        <!-- About Me Section -->
         <section class="test">
             <h2>About Me</h2>
-            <p>I am a web developer learning HTML and CSS. currently working on improving my skills and building more
+            <p>I am a web developer learning HTML and CSS. Currently working on improving my skills and building more
                 complex projects.</p>
-            <p>I Also Love Tacos</p>
+            <p>I Also Love Tacos!</p>
         </section>
 
+        <!-- Dynamic List Section (Add & Remove Tacos) -->
         <section class="test">
-            <h2>My Favorite kind of Tacos</h2>
+            <h2>My Favorite Kind of Tacos</h2>
             <p>Here are some of my favorite kinds of tacos:</p>
-            <ul>
-                <li class="dragon">Taco 1: Asada Taco</li>
-                <li id="gryffon">Taco 2: BirriaTaco</li>
-                <li class="spider">Taco 3: DeepFried Taco</li>
+
+            <div class="input-group">
+                <input type="text" id="taco-input" placeholder="Add another taco style...">
+                <button id="add-taco-btn" class="btn btn-primary">Add Taco</button>
+            </div>
+
+            <ul id="taco-list">
+                <li class="dragon">
+                    <span>Taco 1: Asada Taco</span>
+                    <button class="delete-btn">Delete</button>
+                </li>
+                <li id="gryffon">
+                    <span>Taco 2: Birria Taco</span>
+                    <button class="delete-btn">Delete</button>
+                </li>
+                <li class="spider">
+                    <span>Taco 3: Deep Fried Taco</span>
+                    <button class="delete-btn">Delete</button>
+                </li>
             </ul>
         </section>
 
+        <!-- Public API Fetch Section (Bonus Requirement) -->
         <section class="test">
+            <h2>Random Taco Inspiration</h2>
+            <p id="api-fact">Click below to fetch dynamic inspiration from an external API!</p>
+            <button id="fetch-fact-btn" class="btn btn-primary">Fetch Inspiration</button>
+        </section>
+
+        <!-- Accessible Form (4 Fields + Validation) -->
+        <section id="form-card" class="test">
             <h2 class="dragon">Contact Me</h2>
-            <p>816-555-5555
-            </p>
-            <p email="afiggers@campus.edu">Email: afiggers@campus.edu</p>
+            <p>Phone: 816-555-5555 | Email: afiggers@campus.edu</p>
+
+            <form id="contact-form" novalidate>
+                <fieldset>
+                    <legend>Talk Tacos With Me</legend>
+
+                    <!-- Field 1: Full Name -->
+                    <div class="field-group">
+                        <label for="full-name">Full Name <span aria-hidden="true">*</span></label>
+                        <input type="text" id="full-name" name="name" required aria-required="true"
+                            aria-describedby="name-error">
+                        <span id="name-error" class="error-message" role="alert">Please enter your full name.</span>
+                    </div>
+
+                    <!-- Field 2: Email Address (Format Validation) -->
+                    <div class="field-group">
+                        <label for="email-address">Email Address <span aria-hidden="true">*</span></label>
+                        <input type="email" id="email-address" name="email" required aria-required="true"
+                            aria-describedby="email-error">
+                        <span id="email-error" class="error-message" role="alert">Please enter a valid email address
+                            containing '@'.</span>
+                    </div>
+
+                    <!-- Field 3: Favorite Taco Style -->
+                    <div class="field-group">
+                        <label for="fav-taco">Favorite Taco Style <span aria-hidden="true">*</span></label>
+                        <input type="text" id="fav-taco" name="favTaco" placeholder="e.g., Al Pastor, Birria, Fish"
+                            required aria-required="true" aria-describedby="taco-error">
+                        <span id="taco-error" class="error-message" role="alert">Please specify your favorite taco
+                            style.</span>
+                    </div>
+
+                    <!-- Field 4: Message -->
+                    <div class="field-group">
+                        <label for="user-message">Your Message <span aria-hidden="true">*</span></label>
+                        <textarea id="user-message" name="message" rows="4" required aria-required="true"
+                            aria-describedby="message-error"></textarea>
+                        <span id="message-error" class="error-message" role="alert">Please write a message before
+                            submitting.</span>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="reset" class="btn btn-secondary">Clear</button>
+                    </div>
+                </fieldset>
+            </form>
         </section>
     </main>
 
+    <script src="script.js"></script>
 </body>
-
-
-
 
 </html>
